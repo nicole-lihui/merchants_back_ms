@@ -1,0 +1,35 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3DynamicSql">
+        <jdbcConnection driverClass="org.mariadb.jdbc.Driver"
+                        connectionURL="jdbc:mariadb://120.78.80.161/merchants_db"
+                        userId="test"
+                        password="maxwit">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.nicole.dao.model" targetProject="src/main/java"/>
+
+        <javaClientGenerator targetPackage="com.nicole.dao.mapper" targetProject="src/main/java"/>
+
+        <table tableName="login" domainObjectName="LoginDO" mapperName="LoginMapper" />
+        <table tableName="account" domainObjectName="AccountDO" mapperName="AccountMapper" >
+            <columnOverride column="money" jdbcType="DECIMAL" javaType="Double"/>
+        </table>
+        <table tableName="shop" domainObjectName="ShopDO" mapperName="ShopMapper" >
+            <columnOverride column="status" jdbcType="BOOLEAN" javaType="Boolean"/>
+        </table>
+        <table tableName="shop_status" domainObjectName="ShopStatusDO" mapperName="ShopStatusMapper" />
+        <table tableName="orders" domainObjectName="OrderDO" mapperName="OrderMapper" />
+        <table tableName="order_status" domainObjectName="OrderStatusDO" mapperName="OrderStatusMapper" />
+        <table tableName="goods" domainObjectName="GoodDO" mapperName="GoodMapper" />
+        <table tableName="good_status" domainObjectName="GoodStatusDO" mapperName="GoodStatusMapper" />
+        <table tableName="good_type" domainObjectName="GoodTypeDO" mapperName="GoodTypeMapper" />
+        <table tableName="order_good" domainObjectName="OrderGoodDO" mapperName="OrderGoodMapper" />
+        <table tableName="bank" domainObjectName="BankDO" mapperName="BankMapper" />
+        <table tableName="account_bank" domainObjectName="AccountBankDO" mapperName="AccountBankMapper" />
+        <table tableName="account_running" domainObjectName="AccountRunningDO" mapperName="AccountRunningMapper" />
+        <table tableName="pay_type" domainObjectName="PayTypeDO" mapperName="PayTypeMapper" />
+    </context>
+</generatorConfiguration>
