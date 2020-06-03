@@ -28,7 +28,7 @@ public class LoginServiceTest {
 
     @Test
     public void insertLogin() {
-        String lphone = "15100000002";
+        String lphone = "15116660781";
         String pw = "maxwit";
         if (loginService.selectLogin(lphone) == null) {
             LoginDO lo = new LoginDO();
